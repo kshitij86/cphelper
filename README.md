@@ -16,6 +16,7 @@
 
 <code> cphelper --help </code>
 
-<p> (2022/07/13) tests have been added, run the following to test </p>
+# changelog
 
-<code> python test.py </code>
+- 	<p> (2022/07/13) tests have been added, run the following to test </p>
+	<code> python test.py </code>
