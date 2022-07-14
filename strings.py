@@ -1,0 +1,6 @@
+DEFAULT_LANG = "cpp"
+CURR_CONFIG = "Your current configuration is: "
+CODE_TEMPLATES = "code_templates/cpp_template.txt"
+SUCCESS_MSG = "created the directly successfully"
+TEST_SUCCESS = "Test success in creating folder, cleaning up"
+CLEANUP_SUCCESS = "Cleanup done, tests complete"
