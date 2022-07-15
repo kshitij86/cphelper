@@ -8,7 +8,7 @@
 
 <p> after installing using pip, simply run </p>
 
-<code> cphelper </code>
+<code> cphelper "fldr_name" </code>
 
 <p> this will create the default folder with a bunch of cpp files using the default template </p>
 
