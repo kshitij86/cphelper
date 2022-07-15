@@ -1,10 +1,11 @@
 import os
 import click
-from strings import DEFAULT_LANG, CODE_TEMPLATES, CURR_CONFIG, SUCCESS_MSG, HELP_STRINGS
+from strings import DEFAULT_LANG_EXT, CPP_TEMPLATE, CURR_CONFIG_PROMPT, SUCCESS_MSG, HELP_STRINGS
 
 
 @click.command()
-@click.option('--name', type=str, default='new_folder', help=HELP_STRINGS["NAME_HELP"])
+@click.argument('name')
+# @click.option('--name', type=str, default='new_folder', help=HELP_STRINGS["NAME_HELP"])
 @click.option('--count', type=int, default=6, help=HELP_STRINGS["COUNT_HELP"])
 @click.option('--lang', type=str, default='cpp', help=HELP_STRINGS["LANG_HELP"])
 @click.option('--target', type=str, default='.', help=HELP_STRINGS["TARGET_HELP"])
@@ -18,9 +19,8 @@ def cli(name, count, lang, target, verbose):
 			click.echo(msg)
 
 	def execute():
-		console_print(CURR_CONFIG)
+		console_print(CURR_CONFIG_PROMPT)
 		console_print([name, lang, target, count])
-
 
 		try:
 			if len(name) > 25:
@@ -43,16 +43,14 @@ def cli(name, count, lang, target, verbose):
 			# each file shuld have the predefined template depending on template option
 			# works only when language matches default lang
 			FILES_PREFIX = f".{lang}"
-			template_file = open(CODE_TEMPLATES, 'r')
-			cpp_template = template_file.read()
 			for i in range(int(count)):
 				file_name = f"{PATH_DIR}{i+1}{FILES_PREFIX}"
 				code_file = open(file_name, 'w')
-				if lang == DEFAULT_LANG:
-					code_file.write(cpp_template)
+				if lang == DEFAULT_LANG_EXT:
+					code_file.write(CPP_TEMPLATE)
 
 			# create input and output files if lang is C++
-			if lang == DEFAULT_LANG:
+			if lang == DEFAULT_LANG_EXT:
 				input_file = f"{PATH_DIR}input.txt"
 				open(input_file, 'w')
 				output_file = f"{PATH_DIR}output.txt"
