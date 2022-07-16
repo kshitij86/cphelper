@@ -20,3 +20,5 @@
 
 - 	<p> (2022/07/13) tests have been added, run the following to test </p>
 	<code> python test.py </code>
+
+-	<q> this project will not receive updates in the foreseeable future </q>
